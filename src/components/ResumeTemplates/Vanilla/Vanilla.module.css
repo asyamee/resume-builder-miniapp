@@ -1,0 +1,126 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  min-height: 1100px;
+  margin: 0 auto;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 2rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.blueBar {
+  width: 100%; 
+  background-color: #0077FF; 
+  height: 1rem; 
+  position: absolute; 
+  top: 0; 
+  left: 0;
+}
+
+.leftColumn {
+  flex: 2;
+  padding-right: 2rem;
+}
+
+.rightColumn {
+  flex: 1;
+  border-left: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.name {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+.experienceItem,
+.educationItem {
+  margin-bottom: 1.5rem;
+}
+
+.experienceTitle,
+.educationTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.company,
+.school {
+  margin: 0.25rem 0;
+  color: #666;
+}
+
+.periodLocation {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.description {
+  margin-top: 0.5rem;
+}
+
+.profilePhotoWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.profilePhoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contactInfo {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.listSection {
+  margin-bottom: 2rem;
+}
+
+.listTitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin-bottom: 0.25rem;
+}
+
+.socialLink {
+  color: #2563eb;
+  text-decoration: none;
+}

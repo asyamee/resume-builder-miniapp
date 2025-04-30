@@ -1,0 +1,162 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "warnOnUnsupportedTypeScriptVersion": false
+  },
+  "plugins": ["@typescript-eslint", "react-hooks", "jsdoc", "prefer-arrow"],
+  "rules": {
+    "semi": ["error", "never"],
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "react/static-property-placement": "off",
+    "react/destructuring-assignment": ["error", "always", { "ignoreClassFields": true }],
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "@public/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@app/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@views/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@processes/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@widgets/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@features/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@entities/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@shared/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@views/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [],
+        "groups": [
+          "builtin",
+          ["external", "type"],
+          "unknown",
+          ["internal", "sibling", "parent"],
+          "index",
+          "object"
+        ]
+      }
+    ],
+    "no-plusplus": "off",
+    "consistent-return": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-param-reassign": "off",
+
+    "newline-after-var": ["error", "always"],
+    "newline-before-return": "error",
+    "no-unreachable": "error",
+    "curly": "error",
+
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/no-array-index-key": "off",
+    "no-void": "off",
+    "no-bitwise": "off",
+    "react/jsx-sort-props": ["error", { "shorthandFirst": true, "noSortAlphabetically": true }],
+    "react/jsx-props-no-spreading": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "react/no-unstable-nested-components": ["error", { "allowAsProps": true }],
+
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "never",
+        "enums": "always-multiline"
+      }
+    ],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "@typescript-eslint/no-unsafe-argument": "error",
+    "@typescript-eslint/semi":  "off"
+  },
+  "globals": {
+    "ApplePaySession": true,
+    "google": true
+  }
+}
