@@ -1,2 +1,7 @@
 node_modules
+build
+
 package-lock.json
+vk-hosting-config.json
+
+build.zip
