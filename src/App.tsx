@@ -6,7 +6,7 @@ import bridge, {
   UserInfo,
 } from '@vkontakte/vk-bridge'
 import {
-  View, AppRoot, AdaptivityProvider, ConfigProvider,
+  View, AdaptivityProvider,
 } from '@vkontakte/vkui'
 import { useActiveVkuiLocation } from '@vkontakte/vk-mini-apps-router'
 
@@ -19,28 +19,24 @@ export const App: FC = () => {
   const [config, setConfig] = useState<PCD>()
 
   useEffect(() => {
-    async function fetchData() {
-      bridge.send('VKWebAppInit')
+    const fetchData = async () => {
       const user = await bridge.send('VKWebAppGetUserInfo')
       const info = await bridge.send('VKWebAppGetConfig')
 
       setConfig(info)
       setUser(user)
     }
+
     fetchData()
   }, [])
 
   return (
-    <ConfigProvider>
-      <AdaptivityProvider>
-        <AppRoot>
-          <View
-            activePanel={activePanel}
-          >
-            <ResumeConstructor id="resume-constructor" fetchedUser={fetchedUser} config={config} />
-          </View>
-        </AppRoot>
-      </AdaptivityProvider>
-    </ConfigProvider>
+    <AdaptivityProvider>
+      <View
+        activePanel={activePanel}
+      >
+        <ResumeConstructor id="resume-constructor" fetchedUser={fetchedUser} config={config} />
+      </View>
+    </AdaptivityProvider>
   )
 }
