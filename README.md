@@ -1,3 +1,11 @@
+Инструкция по веткам:
+
+Бранчеваться только от MAIN, вливать в STABLE, тестировать и только потом вливать в MAIN
+
+MAIN - Основная ветка, после вноса изменений, применять npm run deploy для отображения в мини-приложении. Так же соглашаться заменять develop и tester ссылки.
+
+STABLE - Ветка для тестирования и вноса изменений в приложение.
+
 # Basic [VK Bridge](https://github.com/VKCOM/vk-bridge) + [VKUI](https://github.com/VKCOM/VKUI) + [VK Miniapps Router](https://github.com/VKCOM/vk-mini-apps-router) app
 
 Этот шаблон предоставляет базовый код и настройки для создания мини-приложения внутри ВКонтакте.  
