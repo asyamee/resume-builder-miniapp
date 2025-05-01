@@ -83,7 +83,16 @@ export const ResumeConstructor: FC<ResumeConstructorProps> = ({ id, fetchedUser,
     mode: 'all',
   })
 
-  const { trigger, getValues } = methods
+  const { trigger, getValues, reset } = methods
+
+  const steps = [
+    <FirstStep />,
+    <SecondStep />,
+    <ThirdStep />,
+    <FourthStep />,
+    <FifthStep />,
+    <ResumeGenerator config={config} data={getValues()} />,
+  ]
 
   const handleNextStep = async () => {
     const isStepValid = await trigger()
@@ -95,6 +104,11 @@ export const ResumeConstructor: FC<ResumeConstructorProps> = ({ id, fetchedUser,
 
   const handlePrevStep = () => {
     setStep((prev) => prev - 1)
+  }
+
+  const handleReset = () => {
+    setStep(0)
+    reset()
   }
 
   useEffect(() => {
@@ -131,20 +145,15 @@ export const ResumeConstructor: FC<ResumeConstructorProps> = ({ id, fetchedUser,
                 <Progress value={(100 / 5) * step} />
               </FormItem>
               {
-                {
-                  0: <FirstStep />,
-                  1: <SecondStep />,
-                  2: <ThirdStep />,
-                  3: <FourthStep />,
-                  4: <FifthStep />,
-                  5: <ResumeGenerator config={config} data={getValues()} />,
-                }[step]
+                steps[step]
               }
               {adaptivity.viewWidth >= ViewWidth.SMALL_TABLET && (
               <Controls
                 handlePrevStep={handlePrevStep}
                 handleNextStep={handleNextStep}
+                handleFinalStep={handleReset}
                 step={step}
+                maxSteps={steps.length - 1}
               />
               )}
             </Div>
@@ -154,7 +163,9 @@ export const ResumeConstructor: FC<ResumeConstructorProps> = ({ id, fetchedUser,
               <Controls
                 handlePrevStep={handlePrevStep}
                 handleNextStep={handleNextStep}
+                handleFinalStep={handleReset}
                 step={step}
+                maxSteps={steps.length - 1}
               />
             </FixedLayout>
           )}
